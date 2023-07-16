@@ -1,0 +1,35 @@
+﻿<Window x:Class="YoutubeDownloader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:YoutubeDownloader"
+        Title="YouTube Downloader" Height="350" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Enter YouTube URL:" Margin="21,24,14,-24"/>
+        <TextBox Grid.Row="0" Text="{Binding YoutubeUrl}" Margin="21,43,0,-45" HorizontalAlignment="Left" Width="286"/>
+        <Button Grid.Row="0" Content="Download" Command="{Binding DownloadCommand}" Margin="329,42,0,-46" HorizontalAlignment="Left" Width="157"/>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="-1,65,1,49" Grid.RowSpan="2">
+            <TextBlock Text="Download 1" HorizontalAlignment="Center"/>
+            <ProgressBar Value="{Binding DownloadProgress1}" Minimum="0" Maximum="100" Margin="21,10,14,-10"/>
+            <TextBlock Text="{Binding DownloadPercentage1}" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Vertical" Margin="-1,65,1,49" Grid.RowSpan="2">
+            <TextBlock Text="Download 2" HorizontalAlignment="Center"/>
+            <ProgressBar Value="{Binding DownloadProgress2}" Minimum="0" Maximum="100" Margin="21,10,14,-10"/>
+            <TextBlock Text="{Binding DownloadPercentage2}" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Vertical" Margin="-1,65,1,-25">
+            <TextBlock Text="Download 3" HorizontalAlignment="Center"/>
+            <ProgressBar Value="{Binding DownloadProgress3}" Minimum="0" Maximum="100" Margin="21,10,14,-10"/>
+            <TextBlock Text="{Binding DownloadPercentage3}" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>
